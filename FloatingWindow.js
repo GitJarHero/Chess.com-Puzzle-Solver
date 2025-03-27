@@ -141,7 +141,7 @@ class FloatingWindow {
         // Set initial text and color
         const updateText = () => {
             const specificElement = document.querySelector('#puzzles-board-popover'); // Replace with your actual selector
-            const notStartPos = document.querySelector('#board-primary').game.getFEN() != "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+            const notStartPos = document.querySelector('wc-chess-board').game.getFEN() != "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
             if (specificElement && notStartPos) {
                 this.info.textContent = "Puzzle detected";
                 this.info.style.color = "green";
