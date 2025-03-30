@@ -392,10 +392,17 @@ class FloatingWindow {
         const updateText = () => {
             const specificElement = document.querySelector('#puzzles-board-popover'); // Replace with your actual selector
             const board = document.querySelector('wc-chess-board');
-            const notStartPos = board.game.getFEN() != "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-            if (specificElement && board && notStartPos) {
-                this.info.textContent = "Puzzle detected";
-                this.info.style.color = "green";
+            if (specificElement && board) {
+                const notStartPos = board.game.getFEN() != "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+                if(notStartPos) {
+                    this.info.textContent = "Puzzle detected";
+                    this.info.style.color = "green";
+                }
+                else {
+                    this.info.textContent = "No puzzle detected";
+                    this.info.style.color = "red";
+                }
+                
             } else {
                 this.info.textContent = "No puzzle detected";
                 this.info.style.color = "red";
